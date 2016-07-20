@@ -60,6 +60,9 @@ set omnifunc=syntaxcomplete#Complete
 " Generate a config file for YCM
 Plugin 'rdnetto/YCM-Generator'
 
+" Hopefully some nice markdown highlighting...
+Plugin 'gabrielelana/vim-markdown'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
