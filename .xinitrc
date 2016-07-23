@@ -1,18 +1,13 @@
 #!/bin/sh
-#setxkbmap dvorak
-
-# Start the ssh agent
-#eval (ssh-agent)
-
 # Start dropbox
 dropbox-cli start
 
 # Start Gnome-keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export GNOME_KEYRING_PID
+export GNOME_KEYRING_SOCKET
 export SSH_AUTH_SOCK
-
-# Initiate NetworkManager Applet
-dbus-launch nm-applet &
+export GPG_AGENT_INFO
 
 # If Xresources is present, load it
 [[ -f ~/.Xresources ]] && xrdb ~merge ~/.Xresources
