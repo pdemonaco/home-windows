@@ -63,6 +63,9 @@ Plugin 'rdnetto/YCM-Generator'
 " Hopefully some nice markdown highlighting...
 Plugin 'gabrielelana/vim-markdown'
 
+" Nice Solarized Colorscheme
+Plugin 'altercation/vim-colors-solarized'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -163,12 +166,13 @@ set tm=500
 " Enable syntax highlighting
 syntax enable 
 
-try
-    colorscheme desert
-catch
-endtry
-
 set background=dark
+
+try
+    colorscheme solarized
+catch
+    colorscheme desert
+endtry
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -178,9 +182,10 @@ if has("gui_running")
     set guitablabel=%M\ %t
 
     " Don't use desert in GUI mode
-    try 
-        colorscheme elflord
+    try
+        colorscheme solarized
     catch
+        colorscheme elflord
     endtry
 endif
 
