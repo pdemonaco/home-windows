@@ -12,9 +12,6 @@ export GPG_AGENT_INFO
 # If Xresources is present, load it
 [[ -f ~/.Xresources ]] && xrdb ~merge ~/.Xresources
 
-compton -b
-#xcompmgr -c &
-
 # Trivial setting to enable video offloading
 # See https://wiki.archlinux.org/index.php/PRIME
 xrandr --setprovideroffloadsink radeon Intel
