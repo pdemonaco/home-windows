@@ -1,9 +1,83 @@
-! Set All Base Colors ---------------------
-*foreground: white
-*background: black
+! Set All Base Colors ---------------------------
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
 
-! Xterm Specific Settings`
+*background:            S_base03
+*foreground:            S_base0
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+!! My alt light colors
+#define S_yellowl       #e8b000
+#define S_orangel       #e8632c
+#define S_redl          #e35d5b
+#define S_magental      #dc609c
+#define S_violetl       #9094d3
+#define S_bluel         #4ca2df
+#define S_cyanl         #35c9be
+#define S_greenl        #b1cc00
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+*color10:               S_greenl
+!*color10:               S_base01
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_yellowl
+!*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_bluel
+!*color12:               S_base0
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_cyanl
+!*color14:               S_base1
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
+
+!-- rxvt-unicode Specific Settings --------------
+!! Turn off the scroll bar
+URxvt.scrollBar: false
+
+
+!-- Xterm Specific Settings ---------------------
 xterm*saveLines: 2000
 
-! PRIMARY and Clipboard -------------------
+! PRIMARY and Clipboard 
 XTerm*VT100.translations: #override <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0)
+
