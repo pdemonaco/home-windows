@@ -1,7 +1,4 @@
 #!/bin/sh
-# Start dropbox
-dropbox-cli start
-
 # Start Gnome-keyring
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export GNOME_KEYRING_PID
