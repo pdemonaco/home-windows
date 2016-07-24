@@ -12,6 +12,7 @@
 set $mod Mod1
 set $psst --no-startup-id
 set $locker "i3lock -dut -I 240 -i /home/phil/dropbox/images/background/simon_stalenhag/flyby_1920.png"
+set $dock_cmd ""
 
 # Startup Applications
 #exec ~/scripts/dock2.sh start
@@ -147,8 +148,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # dock or undock
-bindsym $mod+y exec "./scripts/dock2.sh start"
-bindsym $mod+Shift+y exec "./scripts/dock2.sh stop"
+bindsym $mod+y exec "/home/phil/repo/gentoo-notes/scripts/dock/dock.sh start"
+bindsym $mod+Shift+y exec "/home/phil/repo/gentoo-notes/scripts/dock/dock.sh stop"
 
 # lock the system using i3lock
 bindsym $mod+Shift+l exec $locker
