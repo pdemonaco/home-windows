@@ -140,9 +140,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+y exec "./scripts/dock2.sh start"
 bindsym $mod+Shift+y exec "./scripts/dock2.sh stop"
 
-# lock the system using slock
-#bindsym $mod+Shift+l exec "slock"
-bindsym $mod+Shift+l exec "i3lock -dut -I 240 -i /home/pdemonaco/Dropbox/Images/Backgrounds/simon_stalenhag/flyby_1920.png"
+# lock the system using i3lock
+bindsym $mod+Shift+l exec "i3lock -dut -I 240 -i /home/pdemonaco/dropbox/images/background/simon_stalenhag/flyby_1920.png"
 
 
 # reload the configuration file
@@ -200,9 +199,8 @@ workspace_auto_back_and_forth yes
 
 # Startup Applications
 #exec ~/scripts/dock2.sh start
-#exec urxvtd --quiet --opendisplay --fork
+exec urxvtd --quiet --opendisplay --fork
 exec $psst nitrogen --restore
-#exec dropbox-cli start
 exec $psst dbus-launch nm-applet &
 exec $psst dropbox start
 
