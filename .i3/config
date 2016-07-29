@@ -20,8 +20,10 @@ exec $psst compton -b
 exec urxvtd --quiet --opendisplay --fork
 exec $psst nitrogen --restore
 exec $psst dbus-launch nm-applet &
-exec $psst dropbox start
 exec $psst xautolock -time 9 -locker $locker &
+exec $psst shutter --min_at_startup
+exec $psst dropbox start
+#exec $psst qsynergy
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
@@ -52,9 +54,9 @@ bindsym $mod+XF86AudioLowerVolume exec pactl -- set-source-volume @DEFAULT_SOURC
 bindsym $mod+XF86AudioMute exec pactl -- set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Screenshot bindings using shutter
-bindsym Print exec shutter -a
-bindsym $mod+Print exec shutter -s
-bindsym Shift+Print exec shutter -f
+#bindsym Print exec shutter -a
+bindsym Print exec shutter -s
+bindsym Shift+Print exec shutter -a
 
 # Calculator binding!!
 bindsym XF86Calculator exec speedcrunch
