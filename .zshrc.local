@@ -38,7 +38,8 @@ fi
 #fi
 
 # SSH/SCP alias without host-key checking
-alias sshno='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias ssh="TERM=xterm ssh"
+alias sshno="${ssh} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias scpno='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Store Default Browser
