@@ -1,11 +1,4 @@
 #!/bin/sh
-# Start Gnome-keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export GNOME_KEYRING_PID
-export GNOME_KEYRING_SOCKET
-export SSH_AUTH_SOCK
-export GPG_AGENT_INFO
-
 # If Xresources is present, load it
 [[ -f ~/.Xresources ]] && xrdb ~merge ~/.Xresources
 
