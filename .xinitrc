@@ -9,5 +9,15 @@ xrandr --setprovideroffloadsink radeon Intel
 # Turn on numlock
 numlockx &
 
-# Start X with consolekit
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3
+# Make sure D-Bus is running
+# See http://www.nurdletech.com/linux-notes/agents/keyring.html for more detail
+if [[ -z "${DBUS_SESSION_BUS_ADDRESS}" ]];
+then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+# Get gnome-keyring's variables exported
+export $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)
+
+# Start X without consolekit
+exec i3
