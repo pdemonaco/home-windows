@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+for PARENT in $(find . -mindepth 1 -maxdepth 1 -type d)
+do
+    cd "$PWD/${PARENT}"
+
+    for STARGET in $(find . -type f -name "*.symlink" | sed -e s'#^./##')
+    do
+        TARGET="${PWD}/${STARGET}"
+        LINK="${HOME}/"${STARGET%.symlink}
+
+        if [ -h "${LINK}" ]
+        then
+            rm "${LINK}"
+        elif [ -e "${LINK}" ]
+        then
+            mv "${LINK}" "${LINK}.backup"
+        fi
+
+        ln -s "${TARGET}" "${LINK}"
+    done
+
+    cd ..
+done
