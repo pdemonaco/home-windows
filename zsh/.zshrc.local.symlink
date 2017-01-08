@@ -48,6 +48,21 @@ export BROWSER="/usr/bin/google-chrome-stable"
 # Set VI mode by default
 setopt vi
 
+# with spelling correction, assume dvorak kb
+setopt dvorak
+
+# Enable extended globbing
+setopt extendedglob
+
+# Enable interactive comments
+setopt interactivecomments
+
+# Enable date-time functions
+zmodload zsh/datetime
+
+# Let's try to switch to the gentoo prompt
+#prompt gentoo
+
 ## Now, we'll give a few examples of what you might want to use in your
 ## .zshrc.local file (just copy'n'paste and uncomment it there):
 
@@ -126,9 +141,6 @@ setopt vi
 
 ## alert me if something failed
 #setopt printexitvalue
-
-## with spelling correction, assume dvorak kb
-setopt dvorak
 
 ## Allow comments even in interactive shells
 #setopt interactivecomments

@@ -44,18 +44,21 @@ URxvt*color9:                S_orange
 
 !! green dark/light
 URxvt*color2:                S_green
-URxvt*color10:               S_greenl
-!*color10:               S_base01
+URxvt*color10:               S_base01
+! alt light color
+!URxvt*color10:               S_greenl
 
 !! yellow dark/light
 URxvt*color3:                S_yellow
-URxvt*color11:               S_yellowl
-!*color11:               S_base00
+URxvt*color11:               S_base00
+! alt light color
+!URxvt*color11:               S_yellowl
 
 !! blue dark/light
 URxvt*color4:                S_blue
-URxvt*color12:               S_bluel
-!*color12:               S_base0
+URxvt*color12:               S_base0
+! alt light color
+!URxvt*color12:               S_bluel
 
 !! magenta dark/light
 URxvt*color5:                S_magenta
@@ -63,8 +66,9 @@ URxvt*color13:               S_violet
 
 !! cyan dark/light
 URxvt*color6:                S_cyan
-URxvt*color14:               S_cyanl
-!*color14:               S_base1
+URxvt*color14:               S_base1
+! alt light color
+!URxvt*color14:               S_cyanl
 
 !! white dark/light
 URxvt*color7:                S_base2
