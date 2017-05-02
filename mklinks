@@ -8,15 +8,25 @@ do
     do
         TARGET="${PWD}/${STARGET}"
         LINK="${HOME}/"${STARGET%.symlink}
+        DIR=$(dirname "${LINK}")
 
+        # Create the directory in which the link is supposed to exist
+        if ! [ -d "${DIR}" ]
+        then
+            mkdir -p "${DIR}"
+        fi
+        
+        # If the link exists, remove it
         if [ -h "${LINK}" ]
         then
             rm "${LINK}"
+        # If a file is there make a backup then remove
         elif [ -e "${LINK}" ]
         then
             mv "${LINK}" "${LINK}.backup"
         fi
 
+        # Create the new link
         ln -s "${TARGET}" "${LINK}"
     done
 
