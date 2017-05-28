@@ -2,8 +2,9 @@
 
 for PARENT in $(find . -mindepth 1 -maxdepth 1 -type d | grep -vE "^[.]/[.]")
 do
-    cd "$PWD/${PARENT}"
+    cd "$PWD/${PARENT}" || exit
 
+    # Create links only
     for STARGET in $(find . -type f -name "*.symlink" | sed -e s'#^./##')
     do
         TARGET="${PWD}/${STARGET}"
@@ -30,5 +31,18 @@ do
         ln -s "${TARGET}" "${LINK}"
     done
 
-    cd ..
+    # Create empty directory structures
+    for STARGET in $(find . -type f -name "*.dir" | sed -e s'#^./##')
+    do
+        TARGET="${PWD}/${STARGET}"
+        LINK="${HOME}/"${STARGET%.dir}
+        DIR=$(dirname "${LINK}")
+
+        if ! [ -d "${DIR}" ]
+        then
+            mkdir -p "${DIR}"
+        fi
+    done
+
+    cd .. || exit
 done
