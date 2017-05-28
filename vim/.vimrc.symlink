@@ -66,6 +66,9 @@ Plugin 'gabrielelana/vim-markdown'
 " Nice Solarized Colorscheme
 Plugin 'altercation/vim-colors-solarized'
 
+" Syntax highlighting for cisco config files
+Plugin 'momota/cisco.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
