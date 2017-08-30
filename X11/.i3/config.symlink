@@ -155,7 +155,7 @@ bindsym $mod+y exec "/home/phil/repo/gentoo-notes/scripts/dock/dock.sh start"
 bindsym $mod+Shift+y exec "/home/phil/repo/gentoo-notes/scripts/dock/dock.sh stop"
 
 # lock the system using i3lock
-bindsym $mod+Shift+l exec $locker
+bindsym $mod+Shift+l exec xautolock -locknow
 
 # reload the configuration file
 bindsym $mod+Shift+J reload
