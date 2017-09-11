@@ -217,3 +217,4 @@ for_window [class="Spotify"] floating enable
 assign [class="chrome"] 4
 assign [class="Spotify"] 5
 assign [class="VirtualBox"] 10
+assign [class="Slack"] 8
