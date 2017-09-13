@@ -24,11 +24,11 @@ File and directory links are divided up into application and/or category specifi
 For each directory the script attempts the following actions:
 
 1. Find all files with the extension `.symlink`. For each file:
-  * Create the parent directories.
-  * Rename the existing file if it exists to name.bak.
-  * Create a link named after the prefix targeting the symlink. 
+    * Create the parent directories.
+    * Rename the existing file if it exists to name.bak.
+    * Create a link named after the prefix targeting the symlink. 
 2. Find all files with the extension `.dir`. For each file:
-  * Create a directory with the same name in the corresponding `$HOME` location.
+    * Create a directory with the same name in the corresponding `$HOME` location.
  
 Here's an example of a symlink created by mklinks:
 
