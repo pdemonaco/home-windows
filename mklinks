@@ -1,0 +1,48 @@
+#!/bin/zsh
+
+for PARENT in $(find . -mindepth 1 -maxdepth 1 -type d | grep -vE "^[.]/[.]")
+do
+    cd "$PWD/${PARENT}" || exit
+
+    # Create links only
+    for STARGET in $(find . -type f -name "*.symlink" | sed -e s'#^./##')
+    do
+        TARGET="${PWD}/${STARGET}"
+        LINK="${HOME}/"${STARGET%.symlink}
+        DIR=$(dirname "${LINK}")
+
+        # Create the directory in which the link is supposed to exist
+        if ! [ -d "${DIR}" ]
+        then
+            mkdir -p "${DIR}"
+        fi
+        
+        # If the link exists, remove it
+        if [ -h "${LINK}" ]
+        then
+            rm "${LINK}"
+        # If a file is there make a backup then remove
+        elif [ -e "${LINK}" ]
+        then
+            mv "${LINK}" "${LINK}.backup"
+        fi
+
+        # Create the new link
+        ln -s "${TARGET}" "${LINK}"
+    done
+
+    # Create empty directory structures
+    for STARGET in $(find . -type f -name "*.dir" | sed -e s'#^./##')
+    do
+        TARGET="${PWD}/${STARGET}"
+        LINK="${HOME}/"${STARGET%.dir}
+        DIR=$(dirname "${LINK}")
+
+        if ! [ -d "${DIR}" ]
+        then
+            mkdir -p "${DIR}"
+        fi
+    done
+
+    cd .. || exit
+done
