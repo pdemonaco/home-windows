@@ -214,7 +214,7 @@ workspace_auto_back_and_forth yes
 for_window [class="Spotify"] floating enable
 
 # Appliation assignment
-assign [class="chrome"] 4
+assign [class="chrome"] 9
 assign [class="Spotify"] 5
 assign [class="VirtualBox"] 10
 assign [class="Slack"] 8
