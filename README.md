@@ -12,7 +12,8 @@ A quick, somewhat elegant way to manage my configuration files.
 2. Execute mklinks.
 
     ```bash
-    ./repo/unix-home/mklinks
+    cd ./repo/unix-home/
+    ./mklinks
     ```
 
 Note that if an existing file is encountered it moved to a backup.

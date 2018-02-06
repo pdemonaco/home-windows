@@ -1,11 +1,13 @@
 #!/bin/zsh
 
+#TODO - Need to add an argument to specify the "link" root directory.
+
 for PARENT in $(find . -mindepth 1 -maxdepth 1 -type d | grep -vE "^[.]/[.]")
 do
     cd "$PWD/${PARENT}" || exit
 
     # Create links only
-    for STARGET in $(find . -type f -name "*.symlink" | sed -e s'#^./##')
+    for STARGET in $(find -L . -type f -name "*.symlink" | sed -e s'#^./##')
     do
         TARGET="${PWD}/${STARGET}"
         LINK="${HOME}/"${STARGET%.symlink}
@@ -28,6 +30,7 @@ do
         fi
 
         # Create the new link
+        echo "ln -s ${TARGET} ${LINK}"
         ln -s "${TARGET}" "${LINK}"
     done
 
