@@ -43,7 +43,7 @@ alias sshno="TERM=xterm ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChec
 alias scpno='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Store Default Browser
-export BROWSER="/usr/bin/google-chrome-stable"
+export BROWSER="/usr/bin/firefox-bin"
 
 # Set VI mode by default
 setopt vi
