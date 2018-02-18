@@ -9,9 +9,13 @@
 
 [alias]
     co = checkout
-    ci = commit -S
+    ci = commit 
     st = status
     br = branch
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short --color
     type = cat-file -t
     dump = cat-file -p
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
