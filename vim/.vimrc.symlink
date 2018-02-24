@@ -78,19 +78,11 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=$HOME/_vim/bundle/Vundle.vim
+set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" Try out YCM bro
-Plugin 'Valloric/YouCompleteMe'
-let g:ycm_confirm_extra_conf = 0
-set omnifunc=syntaxcomplete#Complete
-
-" Generate a config file for YCM
-Plugin 'rdnetto/YCM-Generator'
 
 " Hopefully some nice markdown highlighting...
 Plugin 'gabrielelana/vim-markdown'
@@ -235,8 +227,8 @@ set ffs=unix,dos,mac
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
-set backupdir=$HOME/_vim/backup
-set directory=$HOME/_vim/swap
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/swap
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
