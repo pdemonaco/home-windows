@@ -18,7 +18,8 @@ TBD. Should be similar to the commands below for unix
 2. Execute mklinks.
 
     ```bash
-    ./repo/unix-home/mklinks
+    cd ./repo/unix-home/
+    ./mklinks
     ```
 
 Note that if an existing file is encountered it moved to a backup.

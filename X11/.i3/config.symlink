@@ -46,12 +46,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -time 0 -steps 1 -dec 10
 
 # Multimedia keys for raising/lowering volume and muting
 # Output volume and mute controls
-bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 # Input volume and mute controls
-bindsym $mod+XF86AudioRaiseVolume exec pactl -- set-source-volume @DEFAULT_SOURCE@ +5%
-bindsym $mod+XF86AudioLowerVolume exec pactl -- set-source-volume @DEFAULT_SOURCE@ -5%
+bindsym $mod+XF86AudioRaiseVolume exec pactl -- set-source-volume @DEFAULT_SOURCE@ +2%
+bindsym $mod+XF86AudioLowerVolume exec pactl -- set-source-volume @DEFAULT_SOURCE@ -2%
 bindsym $mod+XF86AudioMute exec pactl -- set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Screenshot bindings using shutter
@@ -214,7 +214,7 @@ workspace_auto_back_and_forth yes
 for_window [class="Spotify"] floating enable
 
 # Appliation assignment
-assign [class="chrome"] 4
+assign [class="chrome"] 9
 assign [class="Spotify"] 5
 assign [class="VirtualBox"] 10
 assign [class="Slack"] 8

@@ -4,11 +4,16 @@ mode=4
 bgcolor=#000000
 
 [xin_0]
-file=/home/phil/dropbox/images/background/simon_stalenhag/december1994_1920.png
+file=/home/phil/dropbox/images/background/simon_stalenhag/by_warmachines2_2560.jpg
 mode=4
 bgcolor=#000000
 
 [xin_1]
-file=/home/phil/dropbox/images/background/simon_stalenhag/busride2_1920.png
+file=/home/phil/dropbox/images/background/simon_stalenhag/by_warmachines1_2560.jpg
+mode=4
+bgcolor=#000000
+
+[xin_2]
+file=/home/phil/dropbox/images/background/simon_stalenhag/by_hp_2560.png
 mode=4
 bgcolor=#000000
