@@ -18,4 +18,4 @@
 [gpg]
 	program = gpg
 [commit]
-	gpgsign = true
+	gpgsign = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
