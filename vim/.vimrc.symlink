@@ -68,6 +68,15 @@ Plugin 'altercation/vim-colors-solarized'
 " Syntax highlighting for cisco config files
 Plugin 'momota/cisco.vim'
 
+" Static analysis and linter 
+Plugin 'vim-syntastic/syntastic'
+
+" Puppet Template Format 
+Plugin 'rudexi/vim-epp'
+
+
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -168,9 +177,18 @@ set tm=500
 " Enable syntax highlighting
 syntax enable 
 
+" Detect terminal color capabilities
+let term_type=$TERM
+
 set background=dark
 
 try
+    let g:solarized_termtrans=1
+    if term_type =~ '/256/'
+        let g:solarized_termcolors=256
+    else
+        let g:solarized_termcolors=16
+    endif
     colorscheme solarized
 catch
     colorscheme desert
@@ -183,11 +201,20 @@ if has("gui_running")
     set t_Co=256
     set guitablabel=%M\ %t
 
-    " Don't use desert in GUI mode
+    " If we can't get solarized use elflord instead
     try
+        let g:solarized_termtrans=1
+        let g:solarized_termcolors=256
         colorscheme solarized
     catch
         colorscheme elflord
+    endtry
+
+    " Let's try setting fonts
+    try
+        set guifont=Hack
+    catch
+        set guifont=Courier_New:h11:cDEFAULT
     endtry
 endif
 
@@ -216,8 +243,15 @@ set expandtab
 set smarttab
 
 " 1 tab == 8 spaces - that's how it is
-set shiftwidth=8
-set tabstop=8
+set shiftwidth=4
+set tabstop=4
+
+" Unless we're editing yaml or puppet files
+autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype puppet setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype epp setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd Filetype go setlocal tabstop=8 shiftwidth=8 noexpandtab
 
 " Linebreak on 80 characters
 set lbr
@@ -391,6 +425,17 @@ map <leader>x :e ~/buffer.md<cr>
 map <leader>pp :setlocal paste!<cr>
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Syntastic https://github.com/vim-syntastic/syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
